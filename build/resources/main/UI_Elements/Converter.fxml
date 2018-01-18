@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="14.0" layoutY="72.0" prefHeight="337.0" prefWidth="281.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="72.0">
+        <columns>
+          <TableColumn prefWidth="112.0" text="Name" />
+          <TableColumn prefWidth="78.0" text="Format" />
+            <TableColumn prefWidth="74.0" text="Length" />
+        </columns>
+      </TableView>
+      <ProgressBar layoutX="14.0" layoutY="423.0" prefHeight="18.0" prefWidth="679.0" progress="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="423.0" />
+      <ProgressBar layoutX="14.0" layoutY="459.0" prefHeight="18.0" prefWidth="679.0" progress="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="459.0" />
+      <Button layoutX="148.0" layoutY="41.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Add..." />
+      <Button layoutX="236.0" layoutY="41.0" mnemonicParsing="false" text="Remove" />
+      <ComboBox layoutX="626.0" layoutY="29.0" prefHeight="25.0" prefWidth="97.0" promptText="Language" />
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="732.0" layoutY="26.0">
+         <image>
+            <Image url="@language.png" />
+         </image>
+         <effect>
+            <Reflection fraction="0.42" topOpacity="0.2">
+               <input>
+                  <Lighting bumpInput="$null">
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </input>
+            </Reflection>
+         </effect>
+      </ImageView>
+      <ImageView layoutX="301.0" layoutY="172.0">
+         <image>
+            <Image url="@arrow-circle-right.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
