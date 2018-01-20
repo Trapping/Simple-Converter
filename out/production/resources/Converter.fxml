@@ -23,7 +23,7 @@
       <ComboBox layoutX="626.0" layoutY="29.0" prefHeight="25.0" prefWidth="97.0" promptText="Language" />
       <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="732.0" layoutY="26.0">
          <image>
-            <Image url="@language.png" />
+            <Image url="@UI_Elements/language.png" />
          </image>
          <effect>
             <Reflection fraction="0.42" topOpacity="0.2">
@@ -39,7 +39,7 @@
       </ImageView>
       <ImageView layoutX="301.0" layoutY="172.0">
          <image>
-            <Image url="@arrow-circle-right.png" />
+            <Image url="@UI_Elements/arrow-circle-right.png" />
          </image>
       </ImageView>
    </children>

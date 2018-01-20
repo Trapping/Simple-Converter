@@ -19,7 +19,7 @@ apply from: "http://dl.bintray.com/content/shemnon/javafx-gradle/8.1.1/javafx.pl
 // Configures plugin
 javafx {
     // Points to JDK and its JavaFX libraries, also declares target runtime JDK
-    javaRuntime = '/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk'
+    javaRuntime = '/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk'
 
     // Application name and ID presented by target OS
     appID 'Simple-Converter'
