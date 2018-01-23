@@ -7,10 +7,12 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    google()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
 }
 
 // Declares binary plugin and its required JavaFX classpath
