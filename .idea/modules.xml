@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple Converter.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple Converter.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple-Converter.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple-Converter.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple-Converter_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple-Converter_main.iml" group="Simple-Converter" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple-Converter_package.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple-Converter_package.iml" group="Simple-Converter" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple-Converter_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple-Converter_test.iml" group="Simple-Converter" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple_Converter.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple_Converter.iml" />
     </modules>
   </component>
 </project>
