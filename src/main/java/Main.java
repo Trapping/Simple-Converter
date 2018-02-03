@@ -5,9 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application{
-/*
-* TODO: Write the GUI loader for FXML file
-* */
+
     public static void main(String[] args) {
         launch(args);
     }
