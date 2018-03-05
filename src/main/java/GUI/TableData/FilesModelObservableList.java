@@ -15,7 +15,7 @@ public class FilesModelObservableList{
         return filesModels;
     }
 
-    public void AddFile(String globalPath, String fileFormat, int lenth){
-        filesModels.add(new FilesModel(globalPath, fileFormat, lenth));
+    public void addFile(String globalPath, String name, String fileFormat, int length){
+        filesModels.add(new FilesModel(globalPath, name, fileFormat, length));
     }
 }

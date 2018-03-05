@@ -12,18 +12,24 @@ import javafx.beans.property.StringProperty;
  */
 public class FilesModel {
 
-    private StringProperty globalPath;
+    private StringProperty absolutePath;
+    private StringProperty name;
     private StringProperty fileFormat;
     private IntegerProperty length;
 
-    public FilesModel(String globalPath, String fileFormat, int length) {
-        this.setGlobalPath(new SimpleStringProperty(globalPath));
+    public FilesModel(String absolutePath, String name, String fileFormat, int length) {
+        this.setAbsolutePath(new SimpleStringProperty(absolutePath));
+        this.setName(new SimpleStringProperty(name));
         this.setFileFormat(new SimpleStringProperty(fileFormat));
         this.setLength(new SimpleIntegerProperty(length));
     }
 
-    public StringProperty getGlobalPath() {
-        return globalPath;
+    public StringProperty getAbsolutePath() {
+        return absolutePath;
+    }
+
+    public StringProperty getName() {
+        return name;
     }
 
     public StringProperty getFileFormat() {
@@ -34,8 +40,12 @@ public class FilesModel {
         return length;
     }
 
-    public void setGlobalPath(StringProperty globalPath) {
-        this.globalPath = globalPath;
+    public void setAbsolutePath(StringProperty absolutePath) {
+        this.absolutePath = absolutePath;
+    }
+
+    public void setName(StringProperty name) {
+        this.name = name;
     }
 
     public void setFileFormat(StringProperty fileFormat) {
