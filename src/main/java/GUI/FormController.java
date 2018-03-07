@@ -3,6 +3,7 @@ package GUI;
 import Core.ConventingThread;
 import GUI.TableData.FilesModel;
 import GUI.TableData.FilesModelObservableList;
+import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,9 +11,13 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -37,6 +42,10 @@ public class FormController implements Initializable {
 
     private static FileChooser fileChooser = new FileChooser();
 
+    private ArrayList<FilesModel> successfulList = new ArrayList<>(), failedList = new ArrayList<>();
+
+    private AnimationTimer animationTimer;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         clmName.setCellValueFactory(cellData -> cellData.getValue().getName());
@@ -45,7 +54,6 @@ public class FormController implements Initializable {
         tblFilesTable.setItems(filesModelObservableList.getFilesModels());
         tblFilesTable.setEditable(false);
         tblFilesTable.setSortPolicy(param -> false);
-
     }
 
     public void btnAddInTableClicked(ActionEvent actionEvent) {
@@ -65,12 +73,33 @@ public class FormController implements Initializable {
     }
 
     public void imgStartClicked(MouseEvent mouseEvent) {
-        ConventingThread conventingThread = new ConventingThread(filesModelObservableList.getFilesModels(), prbCurrentFile, prbAllFiles);
+        ConventingThread conventingThread = new ConventingThread(filesModelObservableList.getFilesModels(), prbCurrentFile, prbAllFiles,
+                successfulList, failedList);
         conventingThread.startThread();
         System.out.println("Нажато старт");
+
+        animationTimer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                waitAndShowNotification(conventingThread.getFinishedStatus());
+            }
+        };
+        animationTimer.start();
+
     }
 
     public void imgStartPressed(MouseEvent mouseEvent) {
+    }
+
+    private void waitAndShowNotification(boolean finishedStatus){
+        if (finishedStatus) {
+                TrayNotification trayNotification = new TrayNotification("Converting finished!",
+                        "Successful: " + successfulList.size() + "\nFailed: " + failedList.size() + "\n",
+                        NotificationType.SUCCESS);
+                trayNotification.setAnimationType(AnimationType.POPUP);
+                trayNotification.showAndWait();
+                animationTimer.stop();
+            }
     }
 
 
