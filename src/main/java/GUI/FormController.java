@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class FormController implements Initializable {
-
     @FXML
     public TableView<FilesModel> tblFilesTable;
     @FXML
@@ -39,11 +38,8 @@ public class FormController implements Initializable {
     public ProgressBar prbAllFiles;
 
     private FilesModelObservableList filesModelObservableList = new FilesModelObservableList();
-
     private static FileChooser fileChooser = new FileChooser();
-
     private ArrayList<FilesModel> successfulList = new ArrayList<>(), failedList = new ArrayList<>();
-
     private AnimationTimer animationTimer;
 
     @Override
@@ -76,7 +72,6 @@ public class FormController implements Initializable {
         ConventingThread conventingThread = new ConventingThread(filesModelObservableList.getFilesModels(), prbCurrentFile, prbAllFiles,
                 successfulList, failedList);
         conventingThread.startThread();
-        System.out.println("Нажато старт");
 
         animationTimer = new AnimationTimer() {
             @Override
@@ -85,7 +80,6 @@ public class FormController implements Initializable {
             }
         };
         animationTimer.start();
-
     }
 
     public void imgStartPressed(MouseEvent mouseEvent) {

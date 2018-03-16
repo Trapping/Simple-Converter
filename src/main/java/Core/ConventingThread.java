@@ -22,7 +22,6 @@ public class ConventingThread implements Runnable{
 
     public ConventingThread(ObservableList<FilesModel> filesList, ProgressBar prbCurrentFile, ProgressBar prbAllFiles,
                             ArrayList<FilesModel> successfulList, ArrayList<FilesModel> failedList) {
-
         this.filesList = filesList;
         this.prbAllFiles = prbAllFiles;
         this.thread = new Thread(this);
@@ -37,7 +36,6 @@ public class ConventingThread implements Runnable{
 
     @Override
     public void run() {
-
         System.out.println("Поток стартовал");
         Encoder encoder = new Encoder();
         AudioAttributes audio = new AudioAttributes();
@@ -48,9 +46,9 @@ public class ConventingThread implements Runnable{
         EncodingAttributes attr = new EncodingAttributes();
         attr.setFormat("mp3");
         attr.setAudioAttributes(audio);
-
         prbAllFiles.setProgress(0.0);
         double progressStep = (double) 1 / filesList.size();
+
         for (FilesModel file: filesList
              ) {
                 try {
